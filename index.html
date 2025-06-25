@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hilewex - Hileli APK Oyunlar</title>
+<style>
+    body {
+        margin: 0;
+        background-color: #121212;
+        color: #eee;
+        font-family: Arial, sans-serif;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Üst Menü */
+    nav.navbar {
+        background-color: #121212;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        padding: 12px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        flex-wrap: wrap;
+    }
+    nav.navbar a {
+        color: #fff;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 6px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        white-space: nowrap;
+        max-width: 110px;
+        text-align: center;
+    }
+    nav.navbar a:hover {
+        background-color: #00b894;
+        color: #fff;
+    }
+
+    /* Hoş Geldiniz Bölümü */
+    section.hero {
+        background-color: #00b894;
+        color: #fff;
+        padding: 100px 20px 60px;
+        text-align: center;
+        margin-top: 55px;
+        position: relative;
+    }
+    section.hero h1 {
+        font-size: 3.5rem;
+        margin: 0 0 15px;
+        font-weight: bold;
+    }
+    section.hero p {
+        font-size: 1.4rem;
+        margin: 0 0 30px;
+        color: white;
+    }
+    section.hero .btn {
+        background-color: #000000;
+        color: #00b894;
+        padding: 14px 30px;
+        font-weight: bold;
+        border-radius: 6px;
+        display: inline-block;
+        border: 2px solid #00b894;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+    }
+    section.hero .btn:hover {
+        background-color: #019875;
+        color: #fff;
+        border-color: #019875;
+    }
+
+    /* Başlık ve Site Hakkında */
+    header.site-header {
+        text-align: center;
+        padding: 30px 15px 15px;
+    }
+    header.site-header h1 {
+        margin: 0;
+        font-size: 2.7rem;
+        color: #00b894;
+    }
+    header.site-header p {
+        margin: 8px 0 0;
+        font-size: 1.1rem;
+        color: #bbb;
+    }
+
+    /* Oyunlar Bölümü */
+    section#games {
+        max-width: 1100px;
+        margin: 40px auto 60px;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+    }
+    .game-card {
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #00b894aa;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .game-card img {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        margin-bottom: 20px;
+    }
+    .game-card h3 {
+        color: #00cec9;
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+    }
+    .game-card p {
+        font-size: 0.95rem;
+        margin: 0 0 15px;
+        color: #ccc;
+    }
+    .game-card a.btn {
+        background-color: #00b894;
+        padding: 12px 24px;
+        color: #121212;
+        font-weight: 700;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .game-card a.btn:hover {
+        background-color: #019875;
+        color: #fff;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #121212;
+        text-align: center;
+        padding: 25px 15px;
+        border-top: 1px solid #222;
+        position: relative;
+    }
+    footer .contact-btn {
+        background-color: #00b894;
+        color: #121212;
+        font-weight: 700;
+        padding: 14px 28px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+    footer .contact-btn:hover {
+        background-color: #019875;
+        color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        section#games {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 500px) {
+        section#games {
+            grid-template-columns: 1fr;
+        }
+        nav.navbar {
+            justify-content: center;
+        }
+        nav.navbar a {
+            max-width: none;
+            font-size: 16px;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Üst Menü -->
+    <nav class="navbar">
+        <a href="#home">Ana Sayfa</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#games">Oyunlar</a>
+        <a href="https://hilewex.github.io/iletisim/" target="_blank" rel="noopener noreferrer">İletişim</a>
+    </nav>
+
+    <!-- Hoş Geldiniz -->
+    <section id="home" class="hero">
+        <h1>Hoş Geldiniz!</h1>
+        <p>En popüler hileli APK oyunları burada bulabilirsiniz.</p>
+        <a href="#games" class="btn">Oyunlara Git</a>
+    </section>
+
+    <!-- Başlık ve Hakkımızda -->
+    <header class="site-header" id="about">
+        <h1>Hilewex</h1>
+        <p>Güvenilir ve güncel hileli APK oyun platformunuz.</p>
+    </header>
+
+    <!-- Oyunlar -->
+    <section id="games">
+        <div class="game-card">
+            <img src="assetsimages/NullsRoyale.png" alt="Null's Royale" />
+            <h3>Null's Royale</h3>
+            <p>Null's Royale APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1yBpW9m4AtQ65qnWMqKVxQmE5sjwBCTMw" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/NullsBrawl.png" alt="Null's Brawl" />
+            <h3>Null's Brawl</h3>
+            <p>Null's Brawl APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1IMGFiFM0IY2xYjz6ajavyNtDZesVUUC2" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/CarParkingMultiPlayer2.png" alt="Car Parking Multiplayer 2" />
+            <h3>Car Parking Multiplayer 2</h3>
+            <p>Car Parking Multiplayer2 APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1K_11kU5417xVjNHFQMs6LF6IRzySjlZ_" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/StickmanParty234.png" alt="Stickman Party 2 3 4" />
+            <h3>Stickman Party 2 3 4</h3>
+            <p>Stickman Partisi 2 3 4 APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1akreTeL2FG6l5QVsQxwet7VvMxSCQivt" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/HillClimbRacing.png" alt="Hill Climb Racing" />
+            <h3>Hill Climb Racing</h3>
+            <p>Hill Climb Racing APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1CtzCo4OEoOtzqu7yIc3RBzZo_i5Dl8bO" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/ShadowFight2.png" alt="Shadow Fight 2" />
+            <h3>Shadow Fight 2</h3>
+            <p>Shadow Fight 2 APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1jgQ6eeA4xSXhfWImpTEJZ-kxrLDpAQJR" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/ZombieTsunami.png" alt="Zombie Tsunami" />
+            <h3>Zombie Tsunami</h3>
+            <p>Zombie Tsunami APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=12pPru8_Eioihw-2hrQUygJ39fnOQfDfg" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/SubwaySurfers.png" alt="Subway Surfers" />
+            <h3>Subway Surfers</h3>
+            <p>Subway Surfers APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1XZhvroamVyDI-2WHR7-kPjLMH5GkkHdt" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/CandyCrushSaga.png" alt="Candy Crush Saga" />
+            <h3>Candy Crush Saga</h3>
+            <p>Candy Crush Saga APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1OwgTuCT0V7ZIQhfuE0uB9nxfoWcIGN4U" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/NullsClash.png" alt="Null's Clash" />
+            <h3>Null's Clash</h3>
+            <p>Null's Clash APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1uZTsA5BqrcC-3A8Zv24rmYAkNSc6AHpI" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/HungrySharkEvolution.png" alt="Hungry Shark Evolution" />
+            <h3>Hungry Shark Evolution</h3>
+            <p>Hungry Shark Evolution APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1btWLhkZ7c7e71P-u632t5VCd2U-i7wOs" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/MyTalkingTom2.png" alt="My Talking Tom 2" />
+            <h3>My Talking Tom 2</h3>
+            <p>My Talking Tom 2 APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=18z99B55ApbUZBtwwmU2jIqVdpvi5DruG" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/Minecraft.png" alt="Minecraft" />
+            <h3>Minecraft</h3>
+            <p>Minecraft APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1T1uSSPqfTtOoUUrGYqEx4vIflNJ45UoJ" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/GTASanAndreas.png" alt="GTA: San Andreas" />
+            <h3>GTA: San Andreas</h3>
+            <p>GTA: San Andreas APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1qPluy7f1H_srzKfHGkZ8j0uRvouv6pbg" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/TocaBocaWorld.png" alt="Toca Boca World" />
+            <h3>Toca Boca World</h3>
+            <p>Toca Boca World APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=12HiVn23oFYNMEKOKhGTzvWn9pnR0rKMt" download class="btn">İndir</a>
+        </div>
+        <div class="game-card">
+            <img src="assetsimages/AmongUs.png" alt="Among Us" />
+            <h3>Among Us</h3>
+            <p>Among Us APK indir</p>
+            <a href="https://drive.google.com/uc?export=download&id=1IW6oIXh0SaIYEPLN31lHlC9FMMOTldsA" download class="btn">İndir</a>
+        </div>
+    </section>
+
+    <footer>
+        <a href="https://hilewex.github.io/iletisim/" target="_blank" rel="noopener noreferrer" class="contact-btn">İletişim</a>
+        <p>© 2025 Hilewex. Güvenilir ve güncel hileli APK oyun platformunuz.</p>
+    </footer>
+
+</body>
+</html>
